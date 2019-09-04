@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Amazonlist</title>
     <%= csrf_meta_tags %>
+  
+  
+     <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- app/assets/stylesheets -->
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- app/assets/javascripts-->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Bootstrap JavaScript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  
   </head>
-
-  <body>
-    <%= yield %>
+   <body>
+    <%= render 'layouts/navbar' %>
+    <%= yield :cover %> 
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+       <%= yield %>
+   </div>
+     <%= render 'layouts/footer' %>
   </body>
 </html>

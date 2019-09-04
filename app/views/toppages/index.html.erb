@@ -1,0 +1,15 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<% content_for :cover do %>
+  <div class="cover">
+   <div class="cover-inner">
+      <div class="cover-contents">
+        <h1>探しものは何ですか</h1>
+          <%= link_to "amazonListを始める", signup_path, class: "btn btn-info btn-lg" %>
+            <%= link_to "/auth/twitter", class: "btn btn-block btn-social btn-twitter" ,method: :post do %>
+            <span class="fa fa-twitter"></span> Twitterアカウントでログイン
+            <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
