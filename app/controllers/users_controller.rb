@@ -17,16 +17,13 @@ class UsersController < ApplicationController
    end
   end
   
-  
   def update
   end
 
   def edit
   end
-  
 
-
- private
+private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
